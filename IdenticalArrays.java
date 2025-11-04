@@ -42,4 +42,21 @@ public class IdenticalArrays {
 
         input.close();
     }
+
+    /** Returns true if m1 and m2 contain the same numbers in all positions. */
+    public static boolean equals(int[][] m1, int[][] m2) {
+        // Check if both arrays have the same dimensions
+        if (m1.length != m2.length || m1[0].length != m2[0].length)
+            return false;
+
+        // Compare each element one by one
+        for (int i = 0; i < m1.length; i++) {
+            for (int j = 0; j < m1[i].length; j++) {
+                if (m1[i][j] != m2[i][j])
+                    return false; // stop early if mismatch found
+            }
+        }
+
+        return true;
+    }
 }
